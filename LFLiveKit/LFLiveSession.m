@@ -107,6 +107,9 @@
     self.uploading = NO;
     [self.socket stop];
     self.socket = nil;
+    //Stop encoder
+    [self.videoEncoder stopEncoder];
+    [self.audioEncoder stopEncoder];
 }
 
 - (void)pushVideo:(nullable CVPixelBufferRef)pixelBuffer{
