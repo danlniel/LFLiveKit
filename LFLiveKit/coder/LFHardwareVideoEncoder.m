@@ -117,6 +117,8 @@
 
 - (void)stopEncoder {
     VTCompressionSessionCompleteFrames(compressionSession, kCMTimeIndefinite);
+    CFRelease(compressionSession);
+    compressionSession = NULL;
 }
 
 - (void)setDelegate:(id<LFVideoEncodingDelegate>)delegate {
